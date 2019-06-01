@@ -37,8 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Survey'
+    'Survey',
+
 ]
+
+
+
+
+
+
+
+LOGIN_URL = '/'
+
+LOGIN_REDIRECT_URL = '/survey/'
+LOGOUT_REDIRECT_URL = '/'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

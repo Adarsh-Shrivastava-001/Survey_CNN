@@ -11,13 +11,13 @@
 <center>
 
 <h3>  Image : {{num}}<h3>
-  <a href='{% url 'Survey:que' num=num%}'><img src='{% static "images/" %}{{img_url}}'></a><br>
+  <a href='{% url 'Survey:que' mid=mid num=num%}'><img src='{% static "images/" %}{{img_url}}'></a><br>
   <br><h3>What do you see here ?</h3><br>
-<form action='{% url 'Survey:nextque' num=num %}' method='post' >
+<form action='{% url 'Survey:nextque' mid=mid num=num %}' method='post' >
   {% csrf_token %}
 <div class="form-group">
 <h4>
-  <input type="radio" name="ans" value="fore"> {{fore}}</input><br>
+  <input type="radio" name="ans" value="fore" required> {{fore}}</input><br>
   <input type="radio" name="ans" value="back"> {{back}}</input><br>
   <input type="radio" name="ans" value="w1"> {{w1}}</input><br>
   <input type="radio" name="ans" value="w2"> {{w2}}</input><br>

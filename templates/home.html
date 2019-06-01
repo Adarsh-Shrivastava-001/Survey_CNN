@@ -7,9 +7,15 @@
 
 <body>
   <div class = "jumbotron">
-    Thanks for helping us by willing to take this survey. You just need to label some images for us by selecting the most appropriate label for each image.
-  <a class='btn btn-primary' href='{% url 'Survey:que' num=1%}'> Begin </a>
+  <h3>  Thanks for helping us by willing to take this survey. You just need to label some images for us by selecting the most appropriate label for each image.</h3>
+<form method='post' action='{% url 'Survey:start' %}'>
+  {% csrf_token %}
+  <br><br>
+    Username : <input type="text" name='name' required class="form-control"><br>
+    Valid Email-ID : <input type="email" name='e_mail' required class="form-control"><br>
 
+
+  <input type ='submit' class='btn btn-primary'>
 </div>
 </body>
 <html>

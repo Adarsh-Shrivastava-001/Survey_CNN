@@ -18,13 +18,16 @@ Including another URLconf
 app_name="Survey"
 from django.contrib import admin
 from django.urls import path, include
-from .views import Home, Que, next_que
+from .views import Home, Que, next_que, start, End
 
 
 
 urlpatterns = [
 
     path('', Home.as_view(), name= 'home'),
-    path('<int:num>', Que.as_view(), name = 'que'),
-    path('next/<int:num>', next_que, name = 'nextque')
+    path('<int:mid>/<int:num>', Que.as_view(), name = 'que'),
+    path('next/<int:mid>/<int:num>', next_que, name = 'nextque'),
+    path('start/', start, name='start'),
+    path('end/', End.as_view(), name='end')
+
 ]
